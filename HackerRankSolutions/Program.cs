@@ -40,6 +40,20 @@ Console.WriteLine($"The sum is : {HackerRank.sum(2,5)}");
 //int result = HackerRank.birthdayCakeCandles(candles);
 //Console.WriteLine("Number of tallest candles: " + result);
 
+//countApplesAndOranges
+// Define the parameters
+int s = 7; // Start of the house
+int t = 11; // End of the house
+int a = 5; // Apple tree location
+int b = 15; // Orange tree location
+
+// Define the apples and oranges distances
+List<int> apples = new List<int> { -2, 2, 1 }; // Distances of apples
+List<int> oranges = new List<int> { 5, -6 };   // Distances of oranges
+
+// Call the countApplesAndOranges method
+HackerRank.countApplesAndOranges(s, t, a, b, apples, oranges);
+
 
 
 
