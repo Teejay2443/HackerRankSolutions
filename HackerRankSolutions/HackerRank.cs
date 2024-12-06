@@ -34,7 +34,6 @@ namespace HackerRankSolutions
         }
         public static int diagonalDifference(List<List<int>> arr)
         {
-
             int n = arr.Count;
             int Sum = 0;
             int Sum2 = 0;
@@ -44,7 +43,6 @@ namespace HackerRankSolutions
                 Sum += arr[i][i];
                 Sum2 += arr[i][n - i - 1];
             }
-
             return Math.Abs(Sum2 - Sum);
         }
         public static void plusMinus(List<int> arr)
@@ -58,7 +56,6 @@ namespace HackerRankSolutions
                 if (number > 0)
                 {
                     positive++;
-
                 }
                 else if (number < 0)
                 {
@@ -78,7 +75,6 @@ namespace HackerRankSolutions
         }
 		public static void miniMaxSum(List<int> arr)
 		{
-
 			arr.Sort();
 			long minSum = (long)arr[0] + arr[1] + arr[2] + arr[3];
 			long maxSum = (long)arr[1] + arr[2] + arr[3] + arr[4];
@@ -90,7 +86,49 @@ namespace HackerRankSolutions
 			int count = candles.Count(x => x == num);
 			return count;
 		}
-	}
+		public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+		{
+
+			int ap = apples.Count(apple => a + apple >= s && a + apple <= t);
+			int og = oranges.Count(orange => b + orange >= s && b + orange <= t);
+			Console.WriteLine(ap);
+			Console.WriteLine(og);
+		}
+        public static string kangaroo(int x1, int v1, int x2, int v2)
+        {
+
+            if ((x1 < x2 && v1 <= v2) || (x2 < x1 && v2 <= v1))
+            {
+                return "NO";
+            }
+
+            if ((x2 - x1) % (v1 - v2) == 0)
+            {
+                return "YES";
+            }
+            return "NO";
+        }
+        public static int getTotalX(List<int> a, List<int> b)
+        {
+            int start = a.Max();
+            int end = b.Min();
+            int count = 0;
+
+            for (int candidate = start; candidate <= end; candidate++)
+            {
+                bool Candidate = a.All(x => candidate % x == 0);
+
+                bool B = b.All(x => x % candidate == 0);
+
+                if (Candidate && B)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+    }
     public static class codechallenge
     {
         public static int basketBall(string[] input)
@@ -134,7 +172,6 @@ namespace HackerRankSolutions
                 Console.WriteLine(e.Message);
             }
             return 0;
-
         }
     }  
 
