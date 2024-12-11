@@ -150,9 +150,37 @@ namespace HackerRankSolutions
             }
             return $"{hour:D2}{minuteandSecond}";
         }
+        public static List<int> gradingStudents(List<int> grades)
+        {
+            List<int> gradeList = new List<int>();
 
-    }
-    public static class codechallenge
+            foreach (int grade in grades)
+            {
+
+                if (grade < 38)
+                {
+                    gradeList.Add(grade);
+                }
+                else
+                {
+
+                    int multiple = ((grade / 5) + 1) * 5;
+
+
+                    if (multiple - grade < 3)
+                    {
+                        gradeList.Add(multiple);
+                    }
+                    else
+                    {
+                        gradeList.Add(grade);
+                    }
+                }
+            }
+
+            return gradeList;
+        }
+        public static class codechallenge
     {
         public static int basketBall(string[] input)
         {
